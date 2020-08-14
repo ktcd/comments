@@ -1,14 +1,14 @@
 <?php
 
-namespace Ktcd\Comments\Models;
+namespace Ktcd\Comments\Traits;
 
 use Ramsey\Uuid\Uuid;
 use Ktcd\Comments\Models\Comment;
 
 trait HasComment
 {
-    public function messages()
+    public function comments()
     {
-        return $this->morphMany(Comment::class, 'receiver');
+        return $this->morphMany(Comment::class, 'post');
     }
 }
